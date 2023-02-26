@@ -141,13 +141,13 @@ Look over the cSpell results. If you're using VS Code, you can click on a findin
 cSpell findings typically fell into a few categories:
 
 * Actual spelling errors. These can be fixed as a one-off or done via find & replace across files in the case of a common misspelling.
-* "Standardizations", e.g. `colour` in the British spelling vs `color` in U.S. English. In these cases, I typically note them and ask whether the author would like me to revert them. I use cSpell's defaults in my default approach, which uses U.S. English.
+* "Standardizations", e.g. `colour` in the British spelling vs `color` in U.S. English. In these cases, I typically note them and ask whether the owner would like me to revert them. I use cSpell's defaults in my default approach, which uses U.S. English.
 * Terms that may not be intended as words but as other terms, e.g. a variable name. I solve this by trying to format them according to their doc system's preference, which is often to place back-ticks around the term.
 * Whole files that might be excluded, e.g. large release notes files where the text is copied from issues and might be misspelled. Or markdown pages that mostly contain HTML.
 * Code snippets that aren't highlighted as such. I use the appropriate markdown to add code fences when I come across these.
 * Something cSpell shouldn't have picked up on but did because a regex ignore pattern was missing. I try to fix that when it happens and add the pattern.
 * Words we want to add to the dictionary. These might be domain-specific words that authors use, or other common words that don't happen to be in cSpell's dictionary. cSpell's VS Code integration gives you the lovely ability to hit `CTRL + .` to bring up a spell-check menu that you can use to add the word to the `cSpell.json` file you've created.
-* Words we want to ignore; they're not correct, but we don't want them to be suggested. Typically names fall into this category, though I'll often put the author's names into the "words we want to add" category.
+* Words we want to ignore; they're not correct, but we don't want them to be suggested. Typically names fall into this category, though I'll often put the owner's names into the "words we want to add" category.
   * :information_source: cSpell's VS Code integration doesn't have a way to add words to the ignore list, so I usually so a pass on the `words` list in `cSpell.json` after and separate them out myself.
 
 ### The Important Last Part: Adapting to Feedback
