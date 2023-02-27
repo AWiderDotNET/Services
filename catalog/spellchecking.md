@@ -1,6 +1,6 @@
-# Service: Adding Spell Checking
+# Service: Adding Automated Spell Checking
 
-For repositories that use markdown for content or docs, we can add automated spell-checking for content snd can fix spelling errors we find.
+For repositories that use markdown for content or docs, we can add automated spell-checking for content and can fix spelling errors we find.
 
 ## For Helpers: How to Implement
 
@@ -129,14 +129,14 @@ I believe in creating pull requests as early as possible so that I can use them 
 
 Next, I:
 
-* Installed node 16 (I use nvm, so it was `nvm install 16.x` and then `nvm use [version I installed]`).
+* Installed node 18 (I use nvm, so it was `nvm install 18.x` and then `nvm use [version I installed]`).
 * Installed cSpell globally (`npm i -g cSpell`)
 * Ran the same cSpell command locally that I'd set up GitHub Actions to do, e.g. `cspell --config ./cSpell.json "content/**/*.md" --no-progress`
   * The `--no-progress` cuts down on noise a lot when you're just looking for errors, since it doesn't output every file name.
 
-### The Fun Part: Addressing Findings!
+### The Fun Part: Addressing Findings
 
-Look over the cSpell results. If you're using VS Code, you can click on a finding and it'll take you right there in the editor.
+Look over the cSpell results. If you're running the cSpell command from within VS Code, you can click on a finding and it'll take you right there in the editor.
 
 cSpell findings typically fell into a few categories:
 
@@ -150,15 +150,15 @@ cSpell findings typically fell into a few categories:
 * Words we want to ignore; they're not correct, but we don't want them to be suggested. Typically names fall into this category, though I'll often put the owner's names into the "words we want to add" category.
   * :information_source: cSpell's VS Code integration doesn't have a way to add words to the ignore list, so I usually so a pass on the `words` list in `cSpell.json` after and separate them out myself.
 
-### The Important Last Part: Adapting to Feedback
+### An Important Consideration: Adapting to Feedback
 
-Spelling and word choice is a personal thing. I take the position that as long as the maintainers are making a choice consciously and consistently, it isn't "wrong'. And any spell-check systems should adapt to that. Any push-back I have on maintainer preferences is minimal. It's not about correcting someone; it's about being helpful.
+Spelling and word choice is a personal thing. I take the position that as long as the maintainers are making a choice consciously and consistently, it isn't "wrong". And any spell-check systems should adapt to that. Any push-back I have on maintainer preferences is minimal. It's not about correcting someone; it's about being helpful.
 
 * I do a self-review on my PR on GitHub
 * I call attention to things that the maintainers may want to weigh in about
 * I explicitly ask for feedback and adapt to it.
 
-### Lastly: Capture that we did this!
+### Lastly: Capture that we did this
 
-* There should be an issue open in this repository for doing this work.
+* There should be an issue open in this repository for doing this work, to track the request.
 * Make sure you add a link to the pull request in that issue so we can see where it was implemented. This way we'll always have a history of this work, and we can return from time to time and brush it up!
